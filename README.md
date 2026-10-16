@@ -25,7 +25,7 @@ pip install -e E:\code\channel-gate
 ```python
 from channel_gate import Pacer
 
-p = Pacer(2, 7, pause_every=10, pause_range=(300, 600))   # 间隔 2~7s 随机，连发 10 发歇 5~10 分钟
+p = Pacer(5, 20, pause_every=10, pause_range=(300, 600))   # 间隔 5~20s 随机，连发 10 发歇 5~10 分钟
 for url in urls:
     p.wait()          # 该歇就歇，返回实际等待秒数
     fetch(url)
@@ -58,7 +58,7 @@ with gate.session("某某采集"):                # 单写者锁：被占会报�
 
 ```python
 from channel_gate import PRESETS, Pacer
-Pacer.for_channel("mmb")      # 间隔 2~7s，每 10 发歇 5~10 分钟
+Pacer.for_channel("mmb")      # 间隔 5~20s，每 10 发歇 5~10 分钟
 Pacer.for_channel("gwdang")   # 间隔 4~12s，每 8 发歇 5~15 分钟（整体拉长）
 ```
 

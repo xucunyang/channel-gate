@@ -55,9 +55,8 @@ def test_for_channel_presets():
     fc = FakeClock()
     m = Pacer.for_channel("mmb", sleeper=fc.sleep, rng=fc.rng)
     g = Pacer.for_channel("gwdang", sleeper=fc.sleep, rng=fc.rng)
-    assert (m.min_s, m.max_s) == (2, 7) and m.pause_every == 10
+    assert (m.min_s, m.max_s) == (5, 20) and m.pause_every == 10
     assert (g.min_s, g.max_s) == (4, 12) and g.pause_every == 8
-    assert g.min_s > m.min_s                # gwdang 档整体拉长
     assert set(PRESETS) == {"mmb", "gwdang"}
 
 

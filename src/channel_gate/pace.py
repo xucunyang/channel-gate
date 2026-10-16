@@ -31,7 +31,7 @@ import time
 # 渠道预置档：间隔(下,上) / 批间休息(每N发, (下,上))
 # 新渠道接入时在此登记，并写进该渠道的操作手册/SOP
 PRESETS: dict[str, dict] = {
-    "mmb": dict(min_s=2, max_s=7, pause_every=10, pause_range=(300, 600)),
+    "mmb": dict(min_s=5, max_s=20, pause_every=10, pause_range=(300, 600)),
     "gwdang": dict(min_s=4, max_s=12, pause_every=8, pause_range=(300, 900)),
 }
 
